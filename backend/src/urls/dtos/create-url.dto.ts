@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 
 export class CreateUrlDto {
-  @IsUrl()
+  @IsUrl({ require_protocol: true })
   @MaxLength(500)
   originalUrl!: string;
 

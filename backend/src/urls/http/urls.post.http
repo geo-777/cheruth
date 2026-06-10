@@ -2,6 +2,6 @@ POST http://localhost:3000/urls
 Content-Type : application/json 
 
 {
-    "originalUrl": "youtube.com",
+    "originalUrl": "http://youtube.com",
     "title":"title"
 }
