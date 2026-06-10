@@ -1,0 +1,5 @@
+{
+  "files.exclude": {
+    "src/urls/dtos/create-link.dto.ts": true
+  }
+}

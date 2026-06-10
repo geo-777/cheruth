@@ -1,0 +1,9 @@
+POST http://localhost:3000/urls
+Content-Type : application/json 
+
+{
+    "originalUrl": "youtube.com",
+    "expiresAt": "2027-01-01",
+    "password": "nintepari",
+    "title":"title"
+}
