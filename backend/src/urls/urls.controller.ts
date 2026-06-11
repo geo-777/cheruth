@@ -13,7 +13,9 @@ import { CreateUrlDto } from './dtos/create-url.dto';
 import { UrlsService } from './providers/urls.service';
 import type { Response } from 'express';
 import { PatchUrlDto } from './dtos/patch-url.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('URLS')
 @Controller('urls')
 export class UrlsController {
   constructor(private readonly urlsService: UrlsService) {}
