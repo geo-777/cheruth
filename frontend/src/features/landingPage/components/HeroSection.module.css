@@ -1,0 +1,152 @@
+.heroContainer {
+    margin: 0 auto;
+    max-width: 48rem;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--muted-foreground);
+    gap: 4px;
+    background-color: var(--card);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--ring);
+    border-radius: 16px;
+}
+
+.mainHeading {
+    margin-top: 1.8rem;
+    font-size: 4.5rem;
+    font-family: monospace, sans-serif;
+    font-weight: 600;
+    background: linear-gradient(#000000, #757575);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subHeading {
+    margin-top: 0.8rem;
+    color: var(--muted-foreground);
+    font-size: 1.2rem;
+}
+
+.bodyDescription {
+    margin: 12px;
+    font-size: 0.9rem;
+    color: var(--ring);
+    font-weight: 400;
+}
+
+.searchForm {
+    margin: 2.5rem auto 0 auto;
+    display: flex;
+    max-width: 36rem;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputWrapper {
+    position: relative;
+    flex: 1;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ring);
+}
+
+.urlInput {
+    height: 3rem;
+    width: 100%;
+    border-radius: 16px;
+    padding-left: 2.5rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--ring);
+    outline: unset;
+}
+
+.shortenBtn {
+    margin: 1rem auto 0 auto;
+    padding: 0.85rem 1.75rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: var(--foreground);
+    color: var(--card);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+.shortenBtn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 8px var(--chart-2);
+}
+
+.resultCard {
+    margin: 1rem auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--muted);
+    padding: 1.3rem;
+    border: 1px solid var(--chart-2);
+    border-radius: 12px;
+    font-family: ui-monospace, monospace;
+}
+
+.resultUrlWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.copyBtn {
+    border: none;
+    background: transparent;
+    color: var(--foreground);
+    outline: unset;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.copyBtn:hover {
+    color: var(--ring);
+}
+
+.microFooterText {
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    margin-top: 0.7rem;
+}
+
+@media (max-width: 640px) {
+    .mainHeading {
+        font-size: 5rem;
+    }
+
+    .subHeading {
+        font-size: 1.4rem;
+    }
+
+    .searchForm {
+        flex-direction: row;
+    }
+
+    .shortenBtn {
+        margin: auto 0.25rem;
+    }
+
+    .shortenBtn:hover {
+        transform: translateY(-2px);
+    }
+}
