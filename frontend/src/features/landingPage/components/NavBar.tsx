@@ -12,7 +12,7 @@ export function NavBar() {
             <p>cheruth</p>
             </div>
             <div className={styles['nav-links']}>
-            <a className={styles['nav-link-item']} href="">
+            <a className={styles['nav-link-item']} href="#features">
                 Features
             </a>
             <a className={styles['nav-link-item']} href="">

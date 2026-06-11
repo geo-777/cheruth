@@ -1,0 +1,83 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainHeading {
+    margin: 2.5rem auto 0.5rem auto;
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.label {
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.mainLabel {
+    font-size: 2.5rem;
+}
+
+.subLabel {
+    font-size: 2.5rem;
+    color: var(--ring);
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background-color: var(--card);
+    box-shadow: -6px 6px var(--ring);
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.8rem;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: background-color 0.2s linear;
+}
+
+.featureItem:hover {
+    background-color: var(--secondary);
+}
+
+.featureIcon {
+    padding: 0.5rem;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    background-color: var(--secondary);
+}
+
+.featureDesc {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 14px;
+    color: var(--ring);
+}
+
+@media (min-width: 780px) {
+    .featureGrid {
+        grid-template-columns: 1fr 1fr;
+        box-shadow: -8px 8px var(--muted-foreground);
+    }
+}
+
+@media (min-width: 1025px) {
+    .featureGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+        box-shadow: -8px 8px var(--muted-foreground);
+    }
+}

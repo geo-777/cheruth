@@ -1,3 +1,4 @@
+import { Features } from "./components/Features";
 import { HeroSection } from "./components/HeroSection";
 import { NavBar } from "./components/NavBar";
 
@@ -8,6 +9,7 @@ const LandingPage = () => {
     <div className={`${styles['landing-main']} ${styles['grid-bg']}`}>
       <NavBar />
       <HeroSection />
+      <Features />
     </div>
   );
 };

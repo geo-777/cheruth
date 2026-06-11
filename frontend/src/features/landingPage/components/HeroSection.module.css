@@ -68,6 +68,7 @@
     width: 100%;
     border-radius: 16px;
     padding-left: 2.5rem;
+    margin-left: 0.3rem;
     font-size: 0.9rem;
     border: 1px solid var(--ring);
     outline: unset;
