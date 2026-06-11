@@ -1,6 +1,10 @@
-PATCH http://localhost:3000/urls/2
+PATCH http://localhost:3000/urls/1
 Content-Type: application/json
 
 {
-    "isActive" : false
+  "originalUrl": "https://googwle.com",
+  "title": "Google",
+  "expiresAt": "2007-01-16",
+  "password": "password#123",
+  "isActive": true
 }
