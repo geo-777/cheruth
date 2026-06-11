@@ -1,7 +1,12 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { UsersService } from '../../users/providers/users.service';
 import { CreateUserDto } from '../../users/dto/create-user.dto';
 import { HashProvider } from './hashing.provider';
+import { LoginUserDto } from '../dto/login-user.dto';
 
 @Injectable()
 export class AuthService {
@@ -20,5 +25,24 @@ export class AuthService {
       ...dto,
       password: hashedPassword,
     });
+  }
+
+  public async login(dto: LoginUserDto) {
+    const user = await this.usersService.findUserByEmail(dto.email);
+
+    if (!user) {
+      throw new UnauthorizedException('Incorrect email or password');
+    }
+
+    const isMatch = await this.hashProvider.compare(
+      dto.password,
+      user.password,
+    );
+
+    if (!isMatch) {
+      throw new UnauthorizedException('Incorrect email or password');
+    }
+
+    return user;
   }
 }

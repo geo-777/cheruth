@@ -29,4 +29,8 @@ export class UsersService {
       throw err;
     }
   }
+
+  public async findUserByEmail(email: string) {
+    return await this.userRepository.findOne({ where: { email } });
+  }
 }
