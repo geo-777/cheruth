@@ -2,6 +2,6 @@ POST http://localhost:3000/urls
 Content-Type : application/json 
 
 {
-    "originalUrl": "http://youtube.com",
+    "originalUrl": "http://maketable.com",
     "title":"title"
 }

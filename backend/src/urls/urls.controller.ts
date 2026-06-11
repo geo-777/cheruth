@@ -1,4 +1,13 @@
-import { Controller, Post, Body, Get, Param, Res } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Param,
+  Res,
+  Delete,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { CreateUrlDto } from './dtos/create-url.dto';
 import { UrlsService } from './providers/urls.service';
 import type { Response } from 'express';
@@ -17,8 +26,13 @@ export class UrlsController {
     @Param('shortCode') shortCode: string,
     @Res() res: Response,
   ) {
+    // handled redirects
     const url = await this.urlsService.redirect(shortCode);
-    console.log(url);
     return res.redirect(url.originalUrl);
+  }
+
+  @Delete(':id')
+  public async deleteUrl(@Param('id', ParseIntPipe) id: number) {
+    return await this.urlsService.deleteUrl(id);
   }
 }

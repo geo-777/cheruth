@@ -36,4 +36,12 @@ export class UrlsService {
     }
     return url;
   }
+
+  public async deleteUrl(id: number) {
+    const result = await this.urlRepository.delete(id);
+    if (!result.affected) {
+      throw new NotFoundException('URL not found');
+    }
+    return { deleted: true, id };
+  }
 }
