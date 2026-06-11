@@ -1,0 +1,6 @@
+PATCH http://localhost:3000/urls/2
+Content-Type: application/json
+
+{
+    "isActive" : false
+}

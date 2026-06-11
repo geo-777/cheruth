@@ -8,6 +8,7 @@ import { Url } from '../url.entity';
 import { Repository } from 'typeorm';
 import { CreateUrlDto } from '../dtos/create-url.dto';
 import { nanoid } from 'nanoid';
+import { PatchUrlDto } from '../dtos/patch-url.dto';
 @Injectable()
 export class UrlsService {
   constructor(
@@ -43,5 +44,26 @@ export class UrlsService {
       throw new NotFoundException('URL not found');
     }
     return { deleted: true, id };
+  }
+  public async patchUrl(id: number, dto: PatchUrlDto) {
+    //checks if it exists
+    const exists = await this.urlRepository.findOne({
+      where: { id },
+    });
+    if (!exists) {
+      throw new NotFoundException('URL not found');
+    }
+    //checks if anything to update
+    const updates = Object.fromEntries(
+      Object.entries(dto).filter(
+        ([key, value]) => value !== undefined && value != exists?.[key],
+      ),
+    );
+
+    if (Object.keys(updates).length === 0) {
+      throw new BadRequestException('Nothing to update');
+    }
+    Object.assign(exists, updates);
+    return await this.urlRepository.save(exists);
   }
 }

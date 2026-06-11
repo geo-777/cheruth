@@ -4,6 +4,7 @@ import {
   Body,
   Get,
   Param,
+  Patch,
   Res,
   Delete,
   ParseIntPipe,
@@ -11,6 +12,7 @@ import {
 import { CreateUrlDto } from './dtos/create-url.dto';
 import { UrlsService } from './providers/urls.service';
 import type { Response } from 'express';
+import { PatchUrlDto } from './dtos/patch-url.dto';
 
 @Controller('urls')
 export class UrlsController {
@@ -34,5 +36,13 @@ export class UrlsController {
   @Delete(':id')
   public async deleteUrl(@Param('id', ParseIntPipe) id: number) {
     return await this.urlsService.deleteUrl(id);
+  }
+
+  @Patch(':id')
+  public async patchUrl(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() patchUrlDto: PatchUrlDto,
+  ) {
+    return await this.urlsService.patchUrl(id, patchUrlDto);
   }
 }
