@@ -1,16 +1,11 @@
-import { Link2 } from "lucide-react"
+import { CheruthLogo } from "../../../components/CheruthLogo"
 import styles from "./NavBar.module.css"
 
 export function NavBar() {
 
     return(
         <nav>
-            <div className={styles['nav-logo']}>
-            <span>
-                <Link2 size={15} strokeWidth={1.75} />{" "}
-            </span>{" "}
-            <p>cheruth</p>
-            </div>
+            <CheruthLogo />
             <div className={styles['nav-links']}>
             <a className={styles['nav-link-item']} href="#features">
                 Features

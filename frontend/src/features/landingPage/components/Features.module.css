@@ -48,7 +48,6 @@
     gap: 8px;
     border: 1px solid var(--border);
     border-radius: 2px;
-    transition: background-color 0.2s linear;
 }
 
 .featureItem:hover {
