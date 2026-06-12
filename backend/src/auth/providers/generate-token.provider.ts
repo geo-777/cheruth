@@ -7,14 +7,12 @@ import { User } from '../../users/user.entity';
 @Injectable()
 export class GenerateTokensProvider {
   constructor(
-    /**
-     * Inject jwtService
-     */
+    /* --------------------------- Inject jwtService -------------------------- */
+
     private readonly jwtService: JwtService,
 
-    /**
-     * Inject jwtConfiguration
-     */
+    /* ------------------------- Inject jwtConfiguration ------------------------ */
+
     @Inject(jwtConfig.KEY)
     private readonly jwtConfiguration: ConfigType<typeof jwtConfig>,
   ) {}
@@ -36,16 +34,23 @@ export class GenerateTokensProvider {
   }
 
   public async generateTokens(user: User) {
+    const payload = { email: user.email };
+    type PartialUser = Partial<ActiveUserData>;
+
     const [accessToken, refreshToken] = await Promise.all([
-      // Generate Access Token with Email
-      this.signToken<Partial<ActiveUserData>>(
+      // Generate access token
+      this.signToken<PartialUser>(
         user.id,
         this.jwtConfiguration.accessTokenTtl,
-        { email: user.email },
+        payload,
       ),
 
-      // Generate Refresh token without email
-      this.signToken(user.id, this.jwtConfiguration.refreshTokenTtl),
+      // Generate refresh token
+      this.signToken<PartialUser>(
+        user.id,
+        this.jwtConfiguration.refreshTokenTtl,
+        payload,
+      ),
     ]);
 
     return {
