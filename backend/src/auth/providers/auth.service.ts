@@ -14,7 +14,7 @@ export class AuthService {
   constructor(
     private usersService: UsersService,
     private hashProvider: HashProvider,
-    private readonly generateTOkensProvider: GenerateTokensProvider,
+    private readonly generateTokensProvider: GenerateTokensProvider,
   ) {}
   public async register(dto: CreateUserDto) {
     //check exists
@@ -45,6 +45,6 @@ export class AuthService {
       throw new UnauthorizedException('Incorrect email or password');
     }
 
-    await this.generateTOkensProvider.generateTokens(user);
+    return await this.generateTokensProvider.generateTokens(user);
   }
 }

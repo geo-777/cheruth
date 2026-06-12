@@ -20,6 +20,7 @@ export class GenerateTokensProvider {
   ) {}
 
   public async signToken<T>(userId: number, expiresIn: number, payload?: T) {
+    console.log(this.jwtConfiguration);
     return await this.jwtService.signAsync(
       {
         sub: userId,
@@ -46,6 +47,7 @@ export class GenerateTokensProvider {
       // Generate Refresh token without email
       this.signToken(user.id, this.jwtConfiguration.refreshTokenTtl),
     ]);
+
     return {
       accessToken,
       refreshToken,
