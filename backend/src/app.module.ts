@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { UrlsModule } from './urls/urls.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     AuthModule,
@@ -20,6 +21,9 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
       database: 'cheruth',
       autoLoadEntities: true,
       synchronize: true,
+    }),
+    ConfigModule.forRoot({
+      isGlobal: true,
     }),
   ],
   controllers: [AppController],

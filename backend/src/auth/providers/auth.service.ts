@@ -7,12 +7,14 @@ import { UsersService } from '../../users/providers/users.service';
 import { CreateUserDto } from '../../users/dto/create-user.dto';
 import { HashProvider } from './hashing.provider';
 import { LoginUserDto } from '../dto/login-user.dto';
+import { GenerateTokensProvider } from './generate-token.provider';
 
 @Injectable()
 export class AuthService {
   constructor(
     private usersService: UsersService,
     private hashProvider: HashProvider,
+    private readonly generateTOkensProvider: GenerateTokensProvider,
   ) {}
   public async register(dto: CreateUserDto) {
     //check exists
@@ -43,6 +45,6 @@ export class AuthService {
       throw new UnauthorizedException('Incorrect email or password');
     }
 
-    return user;
+    await this.generateTOkensProvider.generateTokens(user);
   }
 }
