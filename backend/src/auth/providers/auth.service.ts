@@ -1,6 +1,7 @@
 import {
   ConflictException,
   Injectable,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { UsersService } from '../../users/providers/users.service';
@@ -8,6 +9,7 @@ import { CreateUserDto } from '../../users/dto/create-user.dto';
 import { HashProvider } from './hashing.provider';
 import { LoginUserDto } from '../dto/login-user.dto';
 import { GenerateTokensProvider } from './generate-token.provider';
+import type { ActiveUserData } from '../interfaces/active-user-data.interface';
 
 @Injectable()
 export class AuthService {
@@ -46,5 +48,19 @@ export class AuthService {
     }
 
     return await this.generateTokensProvider.generateTokens(user);
+  }
+
+  public async me(user: ActiveUserData) {
+    const data = await this.usersService.findUserByEmail(user.email);
+
+    if (!data) {
+      throw new NotFoundException('User not found');
+    }
+
+    return {
+      username: data.username,
+      email: data.email,
+      createdAt: data.createdAt,
+    };
   }
 }

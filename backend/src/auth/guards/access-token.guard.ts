@@ -11,9 +11,7 @@ import type { ConfigType } from '@nestjs/config';
 import type { Request } from 'express';
 import type { ActiveUserData } from '../interfaces/active-user-data.interface';
 import { Reflector } from '@nestjs/core';
-interface RequestWithUser extends Request {
-  user: ActiveUserData;
-}
+import type { RequestWithUser } from '../interfaces/request-with-user.interface';
 import { IS_PUBLIC_KEY } from '../decorators/publicRoute.decorator';
 
 @Injectable()
@@ -44,6 +42,7 @@ export class AccessTokenGuard implements CanActivate {
         token,
         this.jwtConfiguration,
       );
+
       request.user = payload;
     } catch {
       throw new UnauthorizedException('Invalid or expired token');
