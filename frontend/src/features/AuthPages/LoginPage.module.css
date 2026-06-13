@@ -1,0 +1,79 @@
+.loginPage {
+    display: flex;
+    min-height: 100vh;
+}
+
+.rightSection {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+}
+
+.subTitle {
+    color: var(--ring);
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+}
+
+.loginForm label {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcomeText {
+    font-size: 2.7rem;
+}
+
+.emailLabel {
+    font-size: 0.85rem;
+    margin-left: 0.25rem;
+}
+
+.passwordLabel {
+    font-size: 0.85rem;
+    margin-left: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputBar {
+    margin: 0.3rem 0 2rem 0; 
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 22rem;
+}
+
+.loginBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    color: var(--background);
+    border: none;
+    border-radius: 8px;
+    background-color: var(--foreground);
+    cursor: pointer;
+}
+
+.cardFooter {
+    color: var(--ring);
+    font-family: monospace;
+    width: fit-content;
+    margin: 0.5rem auto;  
+}
+
+.forgetLink {
+    text-decoration: none;
+    color: var(--ring);
+}
+
+.forgetLink:hover {
+    text-decoration: underline;
+    color: var(--foreground);
+}
+
