@@ -9,6 +9,7 @@ import jwtConfig from './config/jwt.config';
 import { GenerateTokensProvider } from './providers/generate-token.provider';
 import { AccessTokenGuard } from './guards/access-token.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { RefreshTokenProvider } from './providers/refresh-token.provider';
 
 @Module({
   controllers: [AuthController],
@@ -23,6 +24,7 @@ import { APP_GUARD } from '@nestjs/core';
       provide: APP_GUARD,
       useClass: AccessTokenGuard,
     },
+    RefreshTokenProvider,
   ],
   imports: [
     UsersModule,

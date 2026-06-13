@@ -10,6 +10,8 @@ import { HashProvider } from './hashing.provider';
 import { LoginUserDto } from '../dto/login-user.dto';
 import { GenerateTokensProvider } from './generate-token.provider';
 import type { ActiveUserData } from '../interfaces/active-user-data.interface';
+import { RefreshTokenDto } from '../dto/refresh-token.dto';
+import { RefreshTokenProvider } from './refresh-token.provider';
 
 @Injectable()
 export class AuthService {
@@ -17,6 +19,7 @@ export class AuthService {
     private usersService: UsersService,
     private hashProvider: HashProvider,
     private readonly generateTokensProvider: GenerateTokensProvider,
+    private readonly refreshTokenProvider: RefreshTokenProvider,
   ) {}
   public async register(dto: CreateUserDto) {
     //check exists
@@ -62,5 +65,9 @@ export class AuthService {
       email: data.email,
       createdAt: data.createdAt,
     };
+  }
+
+  public refresh(dto: RefreshTokenDto) {
+    return this.refreshTokenProvider.refresh(dto);
   }
 }

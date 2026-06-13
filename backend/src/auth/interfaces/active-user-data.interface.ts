@@ -1,4 +1,4 @@
 export interface ActiveUserData {
-  sud: number;
+  sub: number;
   email: string;
 }
