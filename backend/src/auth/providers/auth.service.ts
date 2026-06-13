@@ -28,10 +28,14 @@ export class AuthService {
       throw new ConflictException('Email already exists');
     }
     const hashedPassword = await this.hashProvider.hash(dto.password);
-    return this.usersService.createUser({
+    await this.usersService.createUser({
       ...dto,
       password: hashedPassword,
     });
+
+    return {
+      message: 'User registered successfully',
+    };
   }
 
   public async login(dto: LoginUserDto) {
