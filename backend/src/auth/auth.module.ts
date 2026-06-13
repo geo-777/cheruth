@@ -7,10 +7,23 @@ import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule } from '@nestjs/config';
 import jwtConfig from './config/jwt.config';
 import { GenerateTokensProvider } from './providers/generate-token.provider';
+import { AccessTokenGuard } from './guards/access-token.guard';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, HashProvider, GenerateTokensProvider],
+  providers: [
+    AuthService,
+    HashProvider,
+    GenerateTokensProvider,
+    //this is injecting the auth guard globally.. so now all routes are privte by default
+    //use public decorator now
+    AccessTokenGuard,
+    {
+      provide: APP_GUARD,
+      useClass: AccessTokenGuard,
+    },
+  ],
   imports: [
     UsersModule,
     ConfigModule.forFeature(jwtConfig),
