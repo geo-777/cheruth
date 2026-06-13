@@ -10,20 +10,29 @@ import jwtConfig from '../config/jwt.config';
 import type { ConfigType } from '@nestjs/config';
 import type { Request } from 'express';
 import type { ActiveUserData } from '../interfaces/active-user-data.interface';
-
+import { Reflector } from '@nestjs/core';
 interface RequestWithUser extends Request {
   user: ActiveUserData;
 }
+import { IS_PUBLIC_KEY } from '../decorators/publicRoute.decorator';
 
 @Injectable()
 export class AccessTokenGuard implements CanActivate {
   constructor(
     private readonly jwtService: JwtService,
+    private readonly reflector: Reflector,
     @Inject(jwtConfig.KEY)
     private readonly jwtConfiguration: ConfigType<typeof jwtConfig>,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
+    const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
+      context.getHandler(),
+      context.getClass(),
+    ]);
+
+    if (isPublic) return true;
+
     const request = context.switchToHttp().getRequest<RequestWithUser>();
     const token = this.extractTokenFromHeader(request);
 

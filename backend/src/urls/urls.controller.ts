@@ -14,7 +14,7 @@ import { UrlsService } from './providers/urls.service';
 import type { Response } from 'express';
 import { PatchUrlDto } from './dtos/patch-url.dto';
 import { ApiTags } from '@nestjs/swagger';
-
+import { PublicRoute } from '../auth/decorators/publicRoute.decorator';
 @ApiTags('URLS')
 @Controller('urls')
 export class UrlsController {
@@ -25,6 +25,7 @@ export class UrlsController {
     return this.urlsService.createUrl(createUrlDto);
   }
 
+  @PublicRoute()
   @Get(':shortCode')
   public async redirectUrl(
     @Param('shortCode') shortCode: string,
