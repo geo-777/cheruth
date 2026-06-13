@@ -1,8 +1,9 @@
 POST http://localhost:3000/urls
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzgxMzI1NjAxLCJleHAiOjE3ODEzMjkyMDEsImF1ZCI6ImNoZXJ1dGgtdXNlcnMiLCJpc3MiOiJjaGVydXRoLWFwaSJ9.O0muOs0F1JqnNn_hoBIWjm8xTETJqeELVAQQCGBaJxo
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiZW1hZWlsQGdtYWlsLmNvbSIsImlhdCI6MTc4MTMzNDM0MCwiZXhwIjoxNzgxMzM3OTQwLCJhdWQiOiJjaGVydXRoLXVzZXJzIiwiaXNzIjoiY2hlcnV0aC1hcGkifQ.9g8Iany8KNDF4D7ZG6uoMKuyI7Eiaf5pSCut24j5zZw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzgxMzMyOTY0LCJleHAiOjE3ODEzMzY1NjQsImF1ZCI6ImNoZXJ1dGgtdXNlcnMiLCJpc3MiOiJjaGVydXRoLWFwaSJ9.qzDjA-qJAKWpVRCLjsqINsunfwgsIpWqcX_QkKYOWjc
 Content-Type : application/json 
 
 {
-    "originalUrl": "https://www.udemy.com/course/nestjs-masterclass-complete-course/learn/lecture/44530643#overview",
-    "title":"Nestjs Course 3"
+    "originalUrl": "https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=46",
+    "title" : "Lower bound binary search"
 }

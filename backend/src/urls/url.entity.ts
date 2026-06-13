@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { User } from '../users/user.entity';
 
 @Entity('urls')
 export class Url {
@@ -47,4 +49,10 @@ export class Url {
     default: true,
   })
   isActive!: boolean;
+
+  @ManyToOne(() => User, (user) => user.urls, {
+    nullable: false,
+    onDelete: 'CASCADE',
+  })
+  user!: User;
 }
