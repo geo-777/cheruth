@@ -10,9 +10,11 @@
     flex-direction: column;
     background-color: var(--background);
     padding: 6rem 3rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--primary);
     border-radius: 8px;
     gap: 0.6rem;
+    box-shadow: 12px 12px var(--border
+    );
 }
 
 .signupLink a{

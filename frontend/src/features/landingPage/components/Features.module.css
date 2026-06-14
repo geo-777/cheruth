@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 .mainHeading {
@@ -34,7 +35,7 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     background-color: var(--card);
-    box-shadow: -6px 6px var(--ring);
+    box-shadow: -6px 6px var(--border);
     margin: 2rem;
     overflow: hidden;
 }

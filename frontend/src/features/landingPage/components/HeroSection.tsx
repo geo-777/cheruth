@@ -11,7 +11,7 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
 
     const [url, setUrl] = useState('');
 
-    const handleUrlSubmit = (e: React.FormEvent) => {
+    const handleUrlSubmit = (e: React.SubmitEvent) => {
 
         e.preventDefault();
         if(!url) return;

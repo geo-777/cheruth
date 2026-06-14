@@ -1,9 +1,9 @@
 import styles from "./AuthFormCard.module.css"
 
 interface AuthContent {
-    footerText : String,
-    footerLink : String,
-    children :any
+    footerText : string,
+    footerLink : string,
+    children : React.ReactNode
 }
 
 export function AuthFormCard ({ footerText, footerLink, children } : AuthContent) {
