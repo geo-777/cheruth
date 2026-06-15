@@ -5,20 +5,17 @@ import {
   Get,
   Param,
   Patch,
-  Res,
   Delete,
   ParseIntPipe,
 } from '@nestjs/common';
 import { CreateUrlDto } from './dtos/create-url.dto';
 import { UrlsService } from './providers/urls.service';
-import type { Response } from 'express';
 import { PatchUrlDto } from './dtos/patch-url.dto';
 import { ApiBearerAuth, ApiTags, ApiOkResponse } from '@nestjs/swagger';
-import { PublicRoute } from '../auth/decorators/publicRoute.decorator';
 import { ActiveUser } from '../auth/decorators/active-user.decorator';
 import type { ActiveUserData } from '../auth/interfaces/active-user-data.interface';
 @ApiTags('URLS')
-@Controller('urls')
+@Controller('api/urls')
 export class UrlsController {
   constructor(private readonly urlsService: UrlsService) {}
 
@@ -67,18 +64,6 @@ export class UrlsController {
     @ActiveUser() user: ActiveUserData,
   ) {
     return this.urlsService.createUrl(createUrlDto, user);
-  }
-
-  /* ------------------------------- REDIRECTING ------------------------------ */
-  @PublicRoute()
-  @Get(':shortCode')
-  public async redirectUrl(
-    @Param('shortCode') shortCode: string,
-    @Res() res: Response,
-  ) {
-    // handled redirects
-    const url = await this.urlsService.redirect(shortCode);
-    return res.redirect(url.originalUrl);
   }
 
   /* -------------------------------- DELETING -------------------------------- */

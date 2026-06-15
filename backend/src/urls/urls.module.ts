@@ -14,5 +14,6 @@ import { UsersModule } from '../users/users.module';
   ],
   controllers: [UrlsController],
   providers: [UrlsService],
+  exports: [UrlsService],
 })
 export class UrlsModule {}

@@ -8,7 +8,7 @@ import { ActiveUser } from './decorators/active-user.decorator';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { ApiBearerAuth, ApiOkResponse } from '@nestjs/swagger';
 
-@Controller('auth')
+@Controller('api/auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 

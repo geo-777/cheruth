@@ -11,7 +11,6 @@ async function bootstrap() {
       transform: true,
     }),
   );
-
   const config = new DocumentBuilder()
     .setTitle('Cheruth')
     .setDescription('URL Shortner application')

@@ -7,6 +7,7 @@ import { UrlsModule } from './urls/urls.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { ConfigModule } from '@nestjs/config';
+import { RedirectsModule } from './redirects/redirects.module';
 @Module({
   imports: [
     AuthModule,
@@ -25,6 +26,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    RedirectsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

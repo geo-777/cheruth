@@ -1,2 +1,2 @@
-GET http://localhost:3000/auth/me 
+GET http://localhost:3000/api/auth/me 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzgxMzI3MTgyLCJleHAiOjE3ODEzMzA3ODIsImF1ZCI6ImNoZXJ1dGgtdXNlcnMiLCJpc3MiOiJjaGVydXRoLWFwaSJ9.kZU0kfScxtG4tQvpf3DaIiushaKXc0uAkvXlcjdw3MQ

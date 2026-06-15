@@ -1,4 +1,4 @@
-PATCH http://localhost:3000/urls/1
+PATCH http://localhost:3000/api/urls/1
 Content-Type: application/json
 
 {

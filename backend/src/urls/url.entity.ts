@@ -50,6 +50,12 @@ export class Url {
   })
   isActive!: boolean;
 
+  @Column({
+    type: 'varchar',
+    nullable: true,
+    length: 100,
+  })
+  password?: string;
   @ManyToOne(() => User, (user) => user.urls, {
     nullable: false,
     onDelete: 'CASCADE',
