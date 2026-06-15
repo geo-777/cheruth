@@ -7,7 +7,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { User } from '../users/user.entity';
-
+import { Click } from '../analytics/entities/clicks.entity';
+import { OneToMany } from 'typeorm';
 @Entity('urls')
 export class Url {
   @PrimaryGeneratedColumn()
@@ -61,4 +62,7 @@ export class Url {
     onDelete: 'CASCADE',
   })
   user!: User;
+
+  @OneToMany(() => Click, (click) => click.url)
+  clicks!: Click[];
 }
