@@ -32,7 +32,7 @@
 .featureGrid {
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid var(--border);
+    border: 1px solid var(--ring);
     border-radius: 16px;
     background-color: var(--card);
     box-shadow: -6px 6px var(--border);
@@ -71,13 +71,13 @@
 @media (min-width: 780px) {
     .featureGrid {
         grid-template-columns: 1fr 1fr;
-        box-shadow: -8px 8px var(--muted-foreground);
+        box-shadow: -8px 8px var(--border);
     }
 }
 
 @media (min-width: 1025px) {
     .featureGrid {
         grid-template-columns: 1fr 1fr 1fr;
-        box-shadow: -8px 8px var(--muted-foreground);
+        box-shadow: -8px 8px var(--border);
     }
 }

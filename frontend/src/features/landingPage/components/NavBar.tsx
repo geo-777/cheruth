@@ -10,7 +10,7 @@ export function NavBar() {
             <a className={styles['nav-link-item']} href="#features">
                 Features
             </a>
-            <a className={styles['nav-link-item']} href="">
+            <a className={styles['nav-link-item']} href="#selfHost">
                 Self-host
             </a>
             <a className={styles['nav-link-item']} href="">

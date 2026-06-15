@@ -45,6 +45,7 @@
     background-color: var(--foreground);
     color: var(--background);
     font-size: 1rem;
+    padding: 1.2rem 2rem;
     margin-top: 1.5rem;
     border: none;
     outline: unset;
@@ -60,7 +61,7 @@
 
 .githubBtn:hover {
     box-shadow: 0 0 10px var(--chart-1);
-    transform: translateY(-10%) scale(1.1);
+    transform: translateY(-10%) scale(1.05);
 }
 
 .terminalWrapper {
@@ -127,23 +128,27 @@
 } 
 
 .code p{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     color: var(--foreground);
-    font-size: 1rem;
+    font-size: 0.85rem;
+    font-family: monospace;
 }
 
 .footer {
-    margin-top: 8rem;
+    margin-top: 9rem;
     color: var(--ring);
 }
 
 @media (max-width: 640px) {
     .terminal {
-        height: 250px;
+        height: 280px;
     }
 
     .footer {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+        margin-top: 4.7rem;
+        margin-bottom: 0.8rem;
     }
 
     .code {
