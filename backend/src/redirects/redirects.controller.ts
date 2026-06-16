@@ -36,11 +36,12 @@ export class RedirectsController {
     };
 
     const url = await this.redirectService.handleRedirect(shortCode);
+    await this.analyticService.recordClick(click, shortCode);
+
     if ('requiresPassword' in url) {
       // return password page
       return res.sendFile(join(process.cwd(), 'public', 'password.html'));
     }
-    await this.analyticService.recordClick(click, shortCode);
     return res.redirect(url.originalUrl);
   }
 

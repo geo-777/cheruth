@@ -27,8 +27,8 @@ import { AnalyticsModule } from './analytics/analytics.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    RedirectsModule,
     AnalyticsModule,
+    RedirectsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

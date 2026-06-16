@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   BadRequestException,
-  ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -104,5 +103,22 @@ export class UrlsService {
     }
     Object.assign(exists, updates);
     return await this.urlRepository.save(exists);
+  }
+
+  public async findOneByIdAndUser(id: number, userId: number) {
+    const url = await this.urlRepository.findOne({
+      where: {
+        id,
+        user: {
+          id: userId,
+        },
+      },
+    });
+
+    if (!url) {
+      throw new NotFoundException('URL not found');
+    }
+
+    return url;
   }
 }
