@@ -27,7 +27,7 @@ export function LoginPage() {
 
         try {
 
-            const credentials: LoginType = { email, password }
+            const credentials: LoginType = { email:email, password: password }
 
             const response = await authServices.login(credentials);
             
@@ -55,14 +55,14 @@ export function LoginPage() {
                     <form className={styles.loginForm} onSubmit={handleLogin}>
                         <label htmlFor="email">
                             <span className={styles.emailLabel}>Email</span>
-                            <input type="email" id="email" className={styles.inputBar} placeholder="you@example.com" required/>
+                            <input type="email" id="email" className={styles.inputBar} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                         </label>
                         <label htmlFor="password">
                             <span className={styles.passwordLabel}>
                                 <span>Password</span>
                                 <a href="" className={styles.forgetLink}>Forgot?</a>
                             </span>
-                            <input type="password" id="password" className={styles.inputBar} placeholder="· · · · · · · ·" required/>
+                            <input type="password" id="password" className={styles.inputBar} placeholder="· · · · · · · ·" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         </label>
                         <button className={styles.loginBtn}>
                             Log in 

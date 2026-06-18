@@ -37,8 +37,10 @@ export function RegisterPage () {
             navigate({ to:'/login' })
         } catch (error: any) {
             const serverMessage = error.response?.data?.message || 'Authentication failed. Please try again.'
-            setErrorMessage(Array.isArray(serverMessage) ? serverMessage[0] : serverMessage);
-            toast.error(errorMessage);
+            const finalMessage = Array.isArray(serverMessage) ? serverMessage[0] : serverMessage
+
+            setErrorMessage(finalMessage);
+            toast.error(finalMessage);
         } finally {
             setIsLoading(false);
             console.log(errorMessage);
@@ -55,19 +57,19 @@ export function RegisterPage () {
                     <p className={styles.subTitle}>Start shortening links in seconds.</p>
 
                     <form className={styles.registerForm} onSubmit={handleRegister}>
-                        <label htmlFor="name">
+                        <label htmlFor="username">
                             <span className={styles.nameLabel}>Name</span>
-                            <input type="text" id="name" className={styles.inputBar} placeholder="Jane Doe" required/>
+                            <input type="text" id="username" name="username" className={styles.inputBar} placeholder="Jane Doe" value={name} onChange={(e) => setName(e.target.value)} required/>
                         </label>
                         <label htmlFor="email">
                             <span className={styles.emailLabel}>Email</span>
-                            <input type="email" id="email" className={styles.inputBar} placeholder="you@example.com" required/>
+                            <input type="email" id="email" name="email" className={styles.inputBar} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                         </label>
                         <label htmlFor="password">
                             <span className={styles.passwordLabel}>
                                 <span>Password</span>
                             </span>
-                            <input type="password" id="password" className={styles.inputBar} placeholder="· · · · · · · ·" required/>
+                            <input type="password" id="password" name="password" className={styles.inputBar} placeholder="· · · · · · · ·" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         </label>
                         <button className={styles.registerBtn} type="submit">
                             {isLoading ? (<>Submitting... <Loader size={16} className={styles.spinner}/></>) : (<>Create Account <ArrowRight size={16}/></>)}
