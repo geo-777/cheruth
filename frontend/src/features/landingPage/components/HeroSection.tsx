@@ -23,7 +23,7 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
 
     return(
         <div className={styles.heroContainer}>
-            <a href="github.com/geo-777/cheruth"  className={styles.pill}>
+            <a href="https://www.github.com/geo-777/cheruth" target="_blank" rel="noopener noreferrer" className={styles.pill}>
                 <Zap size={12}/>
                 v1.0 is live — now open source
                 <ArrowRight size={12}/>

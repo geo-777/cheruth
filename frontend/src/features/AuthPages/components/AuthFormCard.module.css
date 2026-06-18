@@ -13,8 +13,7 @@
     border: 1px solid var(--primary);
     border-radius: 8px;
     gap: 0.6rem;
-    box-shadow: 12px 12px var(--border
-    );
+    box-shadow: 12px 12px var(--border);
 }
 
 .signupLink a{

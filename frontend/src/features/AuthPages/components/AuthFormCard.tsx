@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import styles from "./AuthFormCard.module.css"
 
 interface AuthContent {
@@ -13,7 +14,7 @@ export function AuthFormCard ({ footerText, footerLink, children } : AuthContent
             <div className={styles.card}>
                 { children }
             </div>
-            <p className={styles.signupLink}>{footerText}{" "}<a href="">{footerLink}</a></p>
+            <p className={styles.signupLink}>{footerText}{" "}<Link to={footerLink === 'Log In' ? '/login' : '/register'}>{footerLink}</Link></p>
         </div>
     )
 

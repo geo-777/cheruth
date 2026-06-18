@@ -15,7 +15,7 @@
 .subTitle {
     color: var(--ring);
     margin-bottom: 2rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin: 0 1rem;
 }
 
@@ -64,6 +64,24 @@ label {
     border-radius: 8px;
     background-color: var(--foreground);
     cursor: pointer;
+}
+
+.spinner {
+    animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 
 .cardFooter {

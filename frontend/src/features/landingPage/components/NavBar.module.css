@@ -6,6 +6,11 @@ nav {
 
 }
 
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -20,7 +25,7 @@ nav {
 }
 .nav-action-btns {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
 
 .btn {
@@ -34,6 +39,30 @@ nav {
   border: none;
 }
 .secondary-btn {
-  border: none;
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
   color: var(--muted-foreground);
+}
+
+@media (max-width: 590px) {
+  nav {
+    padding: 1.8rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-link-item {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 12px;
+  }
+
+  .nav-action-btns {
+    gap: 0.3rem;
+  }
 }

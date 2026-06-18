@@ -4,6 +4,7 @@ import styles from "./SelfHost.module.css"
 
 export function SelfHost() {
 
+
     return(
         <div className={styles.selfHostGrid} id="selfHost">
             <section className={styles.mainContent}>
@@ -16,7 +17,7 @@ export function SelfHost() {
                     <li><Check size={18}/>{" "}Postgres or SQLite, your call</li>
                     <li><Check size={18}/>{" "}No telemetry. No tracking. Ever.</li>
                 </ul>
-                <button className={styles.githubBtn}>
+                <button className={styles.githubBtn} onClick={() => window.open('https://github.com/geo-777/cheruth', '_blank')}>
                     Star us on Github{" "}<Star/>
                 </button>
             </section>

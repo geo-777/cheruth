@@ -6,7 +6,7 @@ export function LeftSection() {
 
     return(
         <section className={styles.leftSection}>
-            <a href=""><CheruthLogo /></a>
+            <CheruthLogo />
             <div className={styles.leftSectionContent}>
                 <h2 className={styles.leftLabels}>
                     <span>Small links.</span>

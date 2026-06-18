@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import { CheruthLogo } from "../../../components/CheruthLogo"
 import styles from "./NavBar.module.css"
 
@@ -13,13 +14,13 @@ export function NavBar() {
             <a className={styles['nav-link-item']} href="#selfHost">
                 Self-host
             </a>
-            <a className={styles['nav-link-item']} href="">
+            <a className={styles['nav-link-item']} href="https://github.com/geo-777/cheruth" target="_blank" rel="noopener noreferrer">
                 Docs
             </a>
             </div>
             <div className={styles['nav-action-btns']}>
-            <button className={`${styles['secondary-btn']} ${styles.btn}`}>Login</button>
-            <button className={`${styles['primary-btn']} ${styles.btn}`}>Sign up</button>
+            <Link className={`${styles['secondary-btn']} ${styles.btn}`} to='/login'>Login</Link>
+            <Link className={`${styles['primary-btn']} ${styles.btn}`} to='/register'>Sign up</Link>
             </div>
         </nav>
     )

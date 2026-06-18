@@ -2,8 +2,47 @@ import styles from "./LoginPage.module.css"
 import { LeftSection } from "./components/LeftSection"
 import { AuthFormCard } from "./components/AuthFormCard"
 import { ArrowRight } from "lucide-react"
+import { useState } from "react"
+import { useNavigate } from "@tanstack/react-router"
+import type { LoginType } from "../../api/types"
+import { authServices } from "../../api/authServices"
+import { toast } from "react-toastify"
 
 export function LoginPage() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+    const navigate = useNavigate();
+
+    const handleLogin = async(event: React.SubmitEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+
+        setErrorMessage(null);
+        setIsLoading(true);
+
+        try {
+
+            const credentials: LoginType = { email, password }
+
+            const response = await authServices.login(credentials);
+            
+            toast.success('Login successfull..')
+
+            navigate({ to: '/' })
+
+        } catch (error: any) {
+            const serverMessage = error.response?.data?.message || 'Authentication failed. Please try again.'
+            setErrorMessage(Array.isArray(serverMessage) ? serverMessage[0] : serverMessage);
+            toast.error(errorMessage);
+        } finally {
+            setIsLoading(false);
+        }
+    }
 
     return(
         <div className={styles.loginPage}>
@@ -13,7 +52,7 @@ export function LoginPage() {
                     <h1 className={styles.welcomeText}>Welcome back</h1>
                     <p className={styles.subTitle}>Log in to manage your links.</p>
 
-                    <form className={styles.loginForm}>
+                    <form className={styles.loginForm} onSubmit={handleLogin}>
                         <label htmlFor="email">
                             <span className={styles.emailLabel}>Email</span>
                             <input type="email" id="email" className={styles.inputBar} placeholder="you@example.com" required/>
