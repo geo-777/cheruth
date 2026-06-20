@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { CheruthLogo } from "../../../components/CheruthLogo"
+import { CheruthLogo } from "../../../components/CheruthLogo/CheruthLogo"
 import styles from "./NavBar.module.css"
 
 export function NavBar() {

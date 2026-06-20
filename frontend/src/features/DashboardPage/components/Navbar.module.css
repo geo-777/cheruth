@@ -1,0 +1,16 @@
+.navBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBar>div {
+    display: flex;
+    gap: 1rem;
+}
+
+.firstLink::before {
+    content: '';
+    border-left: 1px solid var(--ring);
+    padding-left: 1rem;
+}

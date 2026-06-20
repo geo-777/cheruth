@@ -1,5 +1,5 @@
 import styles from "./LeftSection.module.css"
-import { CheruthLogo } from "../../../components/CheruthLogo"
+import { CheruthLogo } from "../../../components/CheruthLogo/CheruthLogo"
 import { Check, ArrowRight } from "lucide-react"
 
 export function LeftSection() {

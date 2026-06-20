@@ -1,6 +1,6 @@
 
-const ACCESS_TOKEN = 'cheruth_access_token';
-const REFRESH_TOKEN = 'cheruth_refresh_token';
+export const ACCESS_TOKEN = 'cheruth_access_token';
+export const REFRESH_TOKEN = 'cheruth_refresh_token';
 
 export const authStorage= {
     getAccessToken: () : string | null => localStorage.getItem(ACCESS_TOKEN),

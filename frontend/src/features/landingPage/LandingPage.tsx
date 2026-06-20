@@ -8,7 +8,7 @@ import styles from "./LandingPage.module.css"
 const LandingPage = () => {
 
   return (
-    <div className={`${styles['landing-main']} ${styles['grid-bg']}`}>
+    <div className={`${styles['landing-main']} grid-bg`}>
       <NavBar />
       <HeroSection />
       <Features />

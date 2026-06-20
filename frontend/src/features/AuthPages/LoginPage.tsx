@@ -33,7 +33,7 @@ export function LoginPage() {
             
             toast.success('Login successfull..')
 
-            navigate({ to: '/' })
+            navigate({ to: '/dashboard' })
 
         } catch (error: any) {
             const serverMessage = error.response?.data?.message || 'Authentication failed. Please try again.'

@@ -1,9 +1,9 @@
 import { Check, ChevronRight, DollarSign, Star, Terminal } from "lucide-react"
+import { TerminalWindow } from "../../../components/TerminalWindow/Terminal"
 import styles from "./SelfHost.module.css"
 
 
 export function SelfHost() {
-
 
     return(
         <div className={styles.selfHostGrid} id="selfHost">
@@ -21,19 +21,19 @@ export function SelfHost() {
                     Star us on Github{" "}<Star/>
                 </button>
             </section>
-            <section className={styles.terminalWrapper}>
-                <div className={styles.terminal}>
-                    <div className={styles.header}><Terminal size={18}/>{" "}<span>~/cheruth</span> <span><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i></span></div>
-                    <div className={styles.code}>
-                        <span># clone & run</span>
-                        <p><DollarSign size={12}/>{" "}git clone github.com/cheruth/cheruth </p>
-                        <p><DollarSign size={12}/>{" "}cd cheruth</p>
-                        <p><DollarSign size={12}/>{" "}docker compose up -d</p>
-                        <span className={styles.footer}><ChevronRight size={16}/>ready on http://localhost:3000</span>
-                    </div>
+            <TerminalWindow canFloat={true}>
+                <div className={styles.header}><Terminal size={18}/>{" "}<span>~/cheruth</span> <span><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i></span></div>
+                <div className={styles.code}>
+                    <span># clone & run</span>
+                    <p><DollarSign size={12}/>{" "}git clone github.com/cheruth/cheruth </p>
+                    <p><DollarSign size={12}/>{" "}cd cheruth</p>
+                    <p><DollarSign size={12}/>{" "}docker compose up -d</p>
+                    <span className={styles.footer}><ChevronRight size={16}/>ready on http://localhost:3000</span>
                 </div>
-            </section>
+            </TerminalWindow>
+
         </div>
     )
 
 }
+

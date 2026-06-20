@@ -4,5 +4,16 @@
   box-sizing: border-box;
 }
 
+.grid-bg {
+  background-color: var(--accent);
+
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0, 0.03) 1px, transparent 1px);
+  
+  background-size: 50px 50px;
+
+  background-position: center center;
+}
 
 

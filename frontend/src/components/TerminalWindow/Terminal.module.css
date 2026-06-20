@@ -1,0 +1,48 @@
+.terminalWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal {
+    height: 350px;
+    margin: 2rem 1rem;
+    border: 1px solid var(--muted-foreground);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 80%;
+    cursor: text;
+}
+
+.terminal.float {
+    animation: terminalFloat 7s ease-in-out infinite;
+}
+
+
+@keyframes terminalFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width : 640px) {
+    .terminal {
+        height: 280px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .terminal {
+        width: 90%;
+        max-width: 37rem;
+    }
+}
