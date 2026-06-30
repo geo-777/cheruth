@@ -6,11 +6,11 @@ interface TerminalProps {
     children: React.ReactNode
 }
 
-export function TerminalWindow({ canFloat, children }: TerminalProps) {
+export function TerminalWindow({ canFloat = false, children }: TerminalProps) {
 
     return(
         <section className={styles.terminalWrapper}>
-            <div className={`${styles.terminal} ${canFloat ? 'styles.float' : ''}`}>
+            <div className={`${styles.terminal} ${canFloat ? styles.float : ''}`}>
                 { children }                    
             </div>
         </section>

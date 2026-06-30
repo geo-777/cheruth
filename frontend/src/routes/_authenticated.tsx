@@ -1,5 +1,6 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 import { ACCESS_TOKEN } from '../api/authHelpers'
+import { NavBar } from '../features/ProtectedPages/components/NavBar'
 
 export const Route = createFileRoute('/_authenticated')({
   beforeLoad: async () => {
@@ -8,6 +9,10 @@ export const Route = createFileRoute('/_authenticated')({
       throw redirect({ to: '/login' })
     }
   },
-  component: () => <Outlet />,
+  component: () => 
+  <>
+    <NavBar />
+    <Outlet />
+  </>,
 })
 

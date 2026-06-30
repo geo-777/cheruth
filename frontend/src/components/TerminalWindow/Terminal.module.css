@@ -13,10 +13,16 @@
     overflow: hidden;
     width: 80%;
     cursor: text;
+    box-shadow: none;
+}
+
+.terminal:hover {
+    box-shadow: 0px 0px 6px var(--chart-2);
+    transition: box-shadow 500ms ease-in-out;
 }
 
 .terminal.float {
-    animation: terminalFloat 7s ease-in-out infinite;
+    animation: terminalFloat 5s ease-in-out infinite;
 }
 
 
@@ -26,7 +32,7 @@
     }
 
     50% {
-        transform: translateY(7%);
+        transform: translateY(5%);
     }
 
     100% {

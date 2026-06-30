@@ -1,0 +1,12 @@
+.main {
+    background-color: var(--secondary);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    border-radius: 6px;
+}
+
+.main:hover{
+    background-color: var(--border);
+}
