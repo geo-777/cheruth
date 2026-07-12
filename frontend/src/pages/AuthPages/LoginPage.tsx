@@ -4,8 +4,8 @@ import { AuthFormCard } from "./components/AuthFormCard"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { useNavigate } from "@tanstack/react-router"
-import type { LoginType } from "../../api/types"
-import { authServices } from "../../api/authServices"
+import type { LoginType } from "../../services/api/types"
+import { authServices } from "../../services/api/authServices"
 import { toast } from "react-toastify"
 
 export function LoginPage() {

@@ -29,9 +29,9 @@
     content: '';
     position: absolute;
     background-color: var(--primary);
-    bottom: -10px;
+    bottom: 3px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 60%;
     height: 2px;
 }

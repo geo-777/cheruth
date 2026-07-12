@@ -22,7 +22,7 @@ export function SelfHost() {
                 </button>
             </section>
             <TerminalWindow canFloat={true}>
-                <div className={styles.header}><Terminal size={18}/>{" "}<span>~/cheruth</span> <span><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i></span></div>
+                <div className={styles.header}><Terminal size={18}/>{" "}<span>~/cheruth</span><span><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i></span></div>
                 <div className={styles.code}>
                     <span># clone & run</span>
                     <p><DollarSign size={12}/>{" "}git clone github.com/cheruth/cheruth </p>

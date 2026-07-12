@@ -13,6 +13,7 @@
     "@tanstack/react-router": "^1.170.16",
     "@tanstack/router-plugin": "^1.168.18",
     "axios": "1.18.0",
+    "chart.js": "^4.5.1",
     "lucide-react": "^0.577.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",

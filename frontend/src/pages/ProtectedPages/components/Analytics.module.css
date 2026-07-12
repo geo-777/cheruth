@@ -1,0 +1,9 @@
+.header {
+    min-width: 1200px;
+}
+
+.header i{
+    color: var(--muted-foreground);
+}
+
+

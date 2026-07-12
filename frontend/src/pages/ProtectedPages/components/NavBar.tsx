@@ -14,7 +14,7 @@ export function NavBar() {
             <div>
                 <CheruthLogo />{" | "}
                 <Link to='/dashboard' className={`${styles.navLinks} ${styles.firstLink}`} activeProps={{className: styles.activeLink}}>Dashboard</Link>
-                <Link to='/links' className={styles.navLinks}>Links</Link>
+                <Link to='/links' className={styles.navLinks} activeProps={{className: styles.activeLink}}>Links</Link>
             </div>
             <div>
                 <Button><Plus size={16}/>New</Button>

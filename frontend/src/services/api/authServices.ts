@@ -1,4 +1,4 @@
-import apiClient from "./apiClient";
+import apiClient from "../interceptors/apiClient";
 import { authStorage } from "./authHelpers";
 import type { AuthResponseType, LoginType, RegisterType } from "./types";
 
