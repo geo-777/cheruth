@@ -1,4 +1,4 @@
-import { TerminalWindow } from "../../../components/TerminalWindow/Terminal";
+import { TerminalWindow } from "../../../shared/components/TerminalWindow/Terminal";
 import styles from "./Analytics.module.css"
 
 export function Analytics() {

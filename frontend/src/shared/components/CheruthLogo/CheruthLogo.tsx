@@ -1,7 +1,7 @@
 import { Link2 } from "lucide-react";
 import styles from "./CheruthLogo.module.css"
 import { Link } from "@tanstack/react-router";
-import { ACCESS_TOKEN, authStorage } from "../../services/api/authHelpers";
+import { ACCESS_TOKEN, authStorage } from "../../../services/api/authHelpers";
 
 
 export function CheruthLogo() {

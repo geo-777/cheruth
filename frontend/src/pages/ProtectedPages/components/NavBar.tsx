@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { CheruthLogo } from "../../../components/CheruthLogo/CheruthLogo";
+import { CheruthLogo } from "../../../shared/components/CheruthLogo/CheruthLogo";
 import styles from "./Navbar.module.css"
-import { Button } from "../../../components/Button/Button";
+import { Button } from "../../../shared/components/Button/Button";
 import { LogoutButton } from "./LogoutButton";
 import { LogOut, Plus } from "lucide-react";
 

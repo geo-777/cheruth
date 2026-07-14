@@ -1,5 +1,5 @@
 import { Check, ChevronRight, DollarSign, Star, Terminal } from "lucide-react"
-import { TerminalWindow } from "../../../components/TerminalWindow/Terminal"
+import { TerminalWindow } from "../../../shared/components/TerminalWindow/Terminal"
 import styles from "./SelfHost.module.css"
 
 
