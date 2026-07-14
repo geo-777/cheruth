@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import { CheruthLogo } from "../../../shared/components/CheruthLogo/CheruthLogo"
 import styles from "./NavBar.module.css"
+import { Button } from "../../../shared/components/Button/Button"
 
 export function NavBar() {
 
@@ -19,8 +20,12 @@ export function NavBar() {
             </a>
             </div>
             <div className={styles['nav-action-btns']}>
-            <Link className={`${styles['secondary-btn']} ${styles.btn}`} to='/login'>Login</Link>
-            <Link className={`${styles['primary-btn']} ${styles.btn}`} to='/register'>Sign up</Link>
+                <Button asChild>
+                    <Link className={`${styles['secondary-btn']} ${styles.btn}`} to='/login'>Login</Link>
+                </Button>
+                <Button>
+                    <Link className={`${styles['primary-btn']} ${styles.btn}`} to='/register'>Sign up</Link>
+                </Button>
             </div>
         </nav>
     )

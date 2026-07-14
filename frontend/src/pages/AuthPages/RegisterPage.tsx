@@ -7,6 +7,7 @@ import { authServices } from "../../services/api/authServices"
 import type { RegisterType } from "../../services/api/types"
 import { useNavigate } from "@tanstack/react-router"
 import { toast } from "react-toastify"
+import { Button } from "../../shared/components/Button/Button"
 
 export function RegisterPage () {
 
@@ -71,9 +72,9 @@ export function RegisterPage () {
                             </span>
                             <input type="password" id="password" name="password" className={styles.inputBar} placeholder="· · · · · · · ·" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         </label>
-                        <button className={styles.registerBtn} type="submit">
+                        <Button className={styles.registerBtn} type="submit">
                             {isLoading ? (<>Submitting... <Loader size={16} className={styles.spinner}/></>) : (<>Create Account <ArrowRight size={16}/></>)}
-                        </button>
+                        </Button>
                         <p className={styles.cardFooter}>no credit card · free forever</p>
                     </form>
                 </AuthFormCard>

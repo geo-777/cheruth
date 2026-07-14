@@ -1,6 +1,7 @@
 import { Zap, ArrowRight, Link2, Check } from "lucide-react"
 import styles from "./HeroSection.module.css"
 import React, { useState } from "react";
+import { Button } from "../../../shared/components/Button/Button";
 
 interface HeroSectionProps {
     onUrlShortened: (url: string | null) => void;
@@ -23,11 +24,13 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
 
     return(
         <div className={styles.heroContainer}>
-            <a href="https://www.github.com/geo-777/cheruth" target="_blank" rel="noopener noreferrer" className={styles.pill}>
-                <Zap size={12}/>
-                v1.0 is live — now open source
-                <ArrowRight size={12}/>
-            </a>
+            <Button asChild>
+                <a href="https://www.github.com/geo-777/cheruth" target="_blank" rel="noopener noreferrer" className={styles.pill}>
+                    <Zap size={12}/>
+                    v1.0 is live — now open source
+                    <ArrowRight size={12}/>
+                </a>
+            </Button>
             
             <h1 className={styles.mainHeading}>cheruth</h1>
             <p className={styles.subHeading}>Small links. Simple.</p>
@@ -47,9 +50,9 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
                     required
                     />
                 </div>
-                <button type="submit" onSubmit={handleUrlSubmit} className={styles.shortenBtn}>
+                <Button type="submit" onSubmit={handleUrlSubmit} className={styles.shortenBtn}>
                     Shorten <ArrowRight size={12}/>
-                </button>
+                </Button>
             </form>
 
             {shortenedUrl &&
@@ -58,9 +61,9 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
                         <Check size={24}/>
                         {shortenedUrl}
                     </span>
-                    <button className={styles.copyBtn}>
+                    <Button className={styles.copyBtn}>
                         Copy
-                    </button>
+                    </Button>
                 </div>   
             }
 

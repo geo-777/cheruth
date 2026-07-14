@@ -1,6 +1,7 @@
 import { Check, ChevronRight, DollarSign, Star, Terminal } from "lucide-react"
 import { TerminalWindow } from "../../../shared/components/TerminalWindow/Terminal"
 import styles from "./SelfHost.module.css"
+import { Button } from "../../../shared/components/Button/Button"
 
 
 export function SelfHost() {
@@ -17,9 +18,9 @@ export function SelfHost() {
                     <li><Check size={18}/>{" "}Postgres or SQLite, your call</li>
                     <li><Check size={18}/>{" "}No telemetry. No tracking. Ever.</li>
                 </ul>
-                <button className={styles.githubBtn} onClick={() => window.open('https://github.com/geo-777/cheruth', '_blank')}>
+                <Button className={styles.githubBtn} onClick={() => window.open('https://github.com/geo-777/cheruth', '_blank')}>
                     Star us on Github{" "}<Star/>
-                </button>
+                </Button>
             </section>
             <TerminalWindow canFloat={true}>
                 <div className={styles.header}><Terminal size={18}/>{" "}<span>~/cheruth</span><span><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i><i className="fa-solid fa-circle"></i></span></div>

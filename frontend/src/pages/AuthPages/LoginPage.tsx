@@ -7,6 +7,7 @@ import { useNavigate } from "@tanstack/react-router"
 import type { LoginType } from "../../services/api/types"
 import { authServices } from "../../services/api/authServices"
 import { toast } from "react-toastify"
+import { Button } from "../../shared/components/Button/Button"
 
 export function LoginPage() {
 
@@ -64,10 +65,10 @@ export function LoginPage() {
                             </span>
                             <input type="password" id="password" className={styles.inputBar} placeholder="· · · · · · · ·" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         </label>
-                        <button className={styles.loginBtn}>
+                        <Button className={styles.loginBtn}>
                             Log in 
                             <ArrowRight size={16}/>
-                        </button>
+                        </Button>
                         <p className={styles.cardFooter}>secured · no tracking</p>
                     </form>
                 </AuthFormCard>
