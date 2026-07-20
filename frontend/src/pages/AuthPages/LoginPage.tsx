@@ -7,7 +7,7 @@ import { useNavigate } from "@tanstack/react-router"
 import type { LoginType } from "../../services/api/types"
 import { authServices } from "../../services/api/authServices"
 import { toast } from "react-toastify"
-import { Button } from "../../shared/components/Button/Button"
+import { Button } from "../../shared/ui/Button/Button"
 
 export function LoginPage() {
 

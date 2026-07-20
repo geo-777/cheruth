@@ -7,7 +7,7 @@ import { authServices } from "../../services/api/authServices"
 import type { RegisterType } from "../../services/api/types"
 import { useNavigate } from "@tanstack/react-router"
 import { toast } from "react-toastify"
-import { Button } from "../../shared/components/Button/Button"
+import { Button } from "../../shared/ui/Button/Button"
 
 export function RegisterPage () {
 

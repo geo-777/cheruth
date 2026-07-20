@@ -1,25 +1,17 @@
 import { Zap, ArrowRight, Link2, Check } from "lucide-react"
 import styles from "./HeroSection.module.css"
 import React, { useState } from "react";
-import { Button } from "../../../shared/components/Button/Button";
+import { Button } from "../../../shared/ui/Button/Button";
+export function HeroSection() {
 
-interface HeroSectionProps {
-    onUrlShortened: (url: string | null) => void;
-    shortenedUrl: string | null;
-}
+    const [url, setUrl] = useState(localStorage.getItem('pendingUrl') || '');
 
-export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) {
-
-    const [url, setUrl] = useState('');
-
-    const handleUrlSubmit = (e: React.SubmitEvent) => {
+    const handleUrlSubmit = (e: React.FormEvent) => {
 
         e.preventDefault();
         if(!url) return;
 
-        const randomUrl = Math.random().toString(36).slice(2,7);
-        // onUrlShortened(`cher.li/${randomUrl}`);
-        shortenedUrl = `cher.li/${randomUrl}`;
+        localStorage.setItem('pendingUrl', url)
     };
 
     return(
@@ -38,7 +30,7 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
                 The open-source URL shortener with proper analytics. Self-host it in minutes, or run it on us.
             </p>
 
-            <form className={styles.searchForm}>
+            <form onSubmit={handleUrlSubmit} className={styles.searchForm}>
                 <div className={styles.inputWrapper}>
                     <Link2 size={18} className={styles.inputIcon}/>
                     <input 
@@ -50,20 +42,17 @@ export function HeroSection({ onUrlShortened, shortenedUrl }: HeroSectionProps) 
                     required
                     />
                 </div>
-                <Button type="submit" onSubmit={handleUrlSubmit} className={styles.shortenBtn}>
+                <Button type="submit" className={styles.shortenBtn}>
                     Shorten <ArrowRight size={12}/>
                 </Button>
             </form>
 
-            {shortenedUrl &&
+            {url &&
                 <div className={styles.resultCard}>
                     <span className={styles.resultUrlWrapper}>
                         <Check size={24}/>
-                        {shortenedUrl}
+                        Login to get the shortened link for {url.replace("https://", "")}
                     </span>
-                    <Button className={styles.copyBtn}>
-                        Copy
-                    </Button>
                 </div>   
             }
 

@@ -104,24 +104,14 @@
     font-family: ui-monospace, monospace;
 }
 
+.resultCard span{
+    font-size: 0.75rem;
+}
+
 .resultUrlWrapper {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-}
-
-.copyBtn {
-    border: none;
-    background: transparent;
-    color: var(--foreground);
-    outline: unset;
-    padding: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.copyBtn:hover {
-    color: var(--ring);
 }
 
 .microFooterText {

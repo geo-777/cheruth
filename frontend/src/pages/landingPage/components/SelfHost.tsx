@@ -1,7 +1,7 @@
 import { Check, ChevronRight, DollarSign, Star, Terminal } from "lucide-react"
 import { TerminalWindow } from "../../../shared/components/TerminalWindow/Terminal"
 import styles from "./SelfHost.module.css"
-import { Button } from "../../../shared/components/Button/Button"
+import { Button } from "../../../shared/ui/Button/Button"
 
 
 export function SelfHost() {
